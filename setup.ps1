@@ -10,7 +10,7 @@ function Run-Python {
 function Find-Python {
     param([string]$Command, [string[]]$Arguments)
     try {
-        $Result = & $Command @Arguments -c 'import sys, struct; assert sys.version_info[:2] in ((3,11),(3,12)); assert struct.calcsize("P") == 8; import tkinter; print(sys.executable)' 2>$null
+        $Result = & $Command @Arguments -c "import sys, struct; assert sys.version_info[:2] in ((3,11),(3,12)); assert struct.calcsize('P') == 8; import tkinter; print(sys.executable)" 2>$null
         if ($LASTEXITCODE -eq 0) { return $Result }
     } catch { return $null }
     return $null
@@ -39,5 +39,5 @@ $script:PythonExe = Join-Path $PSScriptRoot '.venv\Scripts\python.exe'
 Run-Python -Arguments @('-m', 'pip', 'install', '--upgrade', 'pip')
 Run-Python -Arguments @('-m', 'pip', 'install', '-r', 'requirements-torch.txt')
 Run-Python -Arguments @('-m', 'pip', 'install', '-r', 'requirements.txt')
-Run-Python -Arguments @('-c', 'import torch, torchaudio, demucs, imageio_ffmpeg, tkinter; print("All dependencies ready.")')
+Run-Python -Arguments @('-c', "import torch, torchaudio, demucs, imageio_ffmpeg, tkinter; print('All dependencies ready.')")
 Write-Host 'Setup complete. Double-click start.bat to launch Sound Studio.'
