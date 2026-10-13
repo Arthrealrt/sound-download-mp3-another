@@ -41,7 +41,7 @@ def main():
                     assert check.getnchannels() == 2
                     assert 1.9 < check.getnframes() / check.getframerate() < 2.1
                 print("PASS:", target.name, flush=True)
-        print("PASS: real Demucs separation and all 9 exports decode correctly.", flush=True)
+        print(f"PASS: real Demucs separation and all {3 * len(FORMATS)} exports decode correctly.", flush=True)
 
 
 if __name__ == "__main__":

@@ -39,5 +39,5 @@ $script:PythonExe = Join-Path $PSScriptRoot '.venv\Scripts\python.exe'
 Run-Python -Arguments @('-m', 'pip', 'install', '--upgrade', 'pip')
 Run-Python -Arguments @('-m', 'pip', 'install', '-r', 'requirements-torch.txt')
 Run-Python -Arguments @('-m', 'pip', 'install', '-r', 'requirements.txt')
-Run-Python -Arguments @('-c', "import torch, torchaudio, demucs, imageio_ffmpeg, tkinter; print('All dependencies ready.')")
+Run-Python -Arguments @('-c', "import torch, torchaudio, demucs, imageio_ffmpeg, tkinter, yt_dlp, Crypto, mutagen; print('All dependencies ready.')")
 Write-Host 'Setup complete. Double-click start.bat to launch Sound Studio.'
