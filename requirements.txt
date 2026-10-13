@@ -1,0 +1,4 @@
+demucs==4.0.1
+imageio-ffmpeg==0.6.0
+numpy==1.26.4
+soundfile==0.13.1
